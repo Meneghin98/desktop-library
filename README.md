@@ -19,7 +19,6 @@ A [Millennium](https://steambrew.app) plugin that turns the Steam library page i
 | `millennium.toml` | Plugin configuration (metadata, entry points, build and dev options) |
 | `backend/` | Lua (LuaJIT) backend. Runs natively with system access, e.g. to read Wallpaper Engine data |
 | `frontend/` | TypeScript/React code injected into the Steam client UI (library page) |
-| `webview/` | Preload script for Steam's web views (store, community) |
 | `resources/` | Static assets bundled with the plugin |
 
 ## Prerequisites

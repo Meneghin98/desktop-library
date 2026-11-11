@@ -35,12 +35,6 @@ entry = "frontend/index.tsx"
 # import { useEffect } from "react";
 # useEffect() -> window.SOME_FAKE_REACT.useEffect() at runtime
 
-[webkit]
-entry = "webview/preload.ts"
-
-# [webkit.globals]
-# same as frontend.globals
-
 [compiler]
 # output path
 # auto = automatically detect Millennium installation and install plugin

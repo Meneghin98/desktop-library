@@ -1,58 +1,23 @@
 import { definePlugin, Field } from 'millennium';
-import { useEffect, useState } from 'react';
 
 const SettingsContent = () => {
-	return <Field label="Hello, World!" />;
+	return <Field label="Desktop Library" description="Settings will be available here." />;
 };
 
-/** @ffi */
-export function subtract(a: number, b: number): { difference: number; a: number; b: number } {
-	console.log('Substracting', a, 'from', b);
-	return { difference: a - b, a, b };
-}
-
-const Icon = () => {
-	const [icon, setIcon] = useState<string>();
-
-	useEffect(() => {
-		console.log('Getting icon...');
-		backend.getSteamBrewIconResource().then(setIcon);
-	}, []);
-
-	return (
-		<div
-			className="SteamClientHomebrewIcon"
-			style={{
-				width: '16px',
-				height: '16px',
-				marginRight: '5px',
-			}}
-			dangerouslySetInnerHTML={{ __html: icon }}
-		/>
-	);
-};
-
-/** @ffi */
-export const hookedSettingsIcon = {
-	SteamButton: () => <Icon />,
-};
-
-async function initializePlugin() {
-	console.log('Frontend initialized');
-
-	const sum = await backend.add(100, 100, 100);
-	console.log('add result:', sum);
-
-	console.warn('Example warning', { sum, threshold: 150 });
-	console.error('Example error', new Error('example error'));
-}
+const PluginIcon = () => (
+	<svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+		<rect x="1" y="1" width="6" height="6" rx="1" />
+		<rect x="9" y="1" width="6" height="6" rx="1" />
+		<rect x="1" y="9" width="6" height="6" rx="1" />
+		<rect x="9" y="9" width="6" height="6" rx="1" />
+	</svg>
+);
 
 export default definePlugin(() => {
-	initializePlugin();
+	console.log('Desktop Library frontend initialized');
 
 	return {
-		title: 'My Plugin',
-		icon: <Icon />,
+		icon: <PluginIcon />,
 		content: <SettingsContent />,
 	};
 });
