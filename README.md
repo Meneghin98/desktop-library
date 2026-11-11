@@ -47,3 +47,7 @@ With `output_path = "auto"` in `millennium.toml`, the build detects your Millenn
 
 - [Millennium plugin documentation](https://docs.steambrew.app/plugins/)
 - [Plugin template](https://github.com/SteamClientHomebrew/PluginTemplate) this project is based on
+
+## License
+
+Released under the [MIT License](LICENSE).

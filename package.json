@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Millennium plugin that turns the Steam library into a desktop.",
   "author": "Simone Meneghin",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "./node_modules/.bin/starlight watch",
