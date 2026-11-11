@@ -1,4 +1,25 @@
 import { definePlugin, Field } from 'millennium';
+import { DesktopView } from './desktop/DesktopView';
+
+const DESKTOP_ROUTE = '/library/desktop';
+
+/**
+ * Extra entries for the Library dropdown in the top navigation bar.
+ * Read by the patch in backend/main.lua (via #{{self}}), which spreads them
+ * after "Collections". `route` makes Steam navigate there on click; names not
+ * starting with "#" are shown as-is (not localized).
+ *
+ * @ffi
+ */
+export const libraryMenuItems = [{ name: 'Desktop', route: DESKTOP_ROUTE }];
+
+/**
+ * Component rendered by the library route injected by the patch in
+ * backend/main.lua. The route path there must match DESKTOP_ROUTE.
+ *
+ * @ffi
+ */
+export const LibraryDesktopView = DesktopView;
 
 const SettingsContent = () => {
 	return <Field label="Desktop Library" description="Settings will be available here." />;
@@ -14,8 +35,6 @@ const PluginIcon = () => (
 );
 
 export default definePlugin(() => {
-	console.log('Desktop Library frontend initialized');
-
 	return {
 		icon: <PluginIcon />,
 		content: <SettingsContent />,

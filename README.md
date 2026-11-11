@@ -42,6 +42,14 @@ bun run build
 
 With `output_path = "auto"` in `millennium.toml`, the build detects your Millennium installation and installs the plugin there. Enable **Desktop Library** in Millennium Settings.
 
+### Testing with themes
+
+Many Millennium users run a custom theme, which can restyle, hide or move Steam UI elements. Develop with the default Steam theme so you see the original UI structure, but **before every release also test the plugin with a few popular Millennium themes** enabled, and check that:
+
+- the desktop view still opens and replaces/sits beside the library as expected;
+- the theme's CSS doesn't leak into the plugin's UI (plugin classes use a `dl-` prefix);
+- the plugin doesn't break the theme's styling of the rest of the client.
+
 ## Resources
 
 - [Millennium plugin documentation](https://docs.steambrew.app/plugins/)
