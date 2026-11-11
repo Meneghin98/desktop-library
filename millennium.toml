@@ -1,9 +1,9 @@
 [plugin]
-id = "com.example.boilerplate"
-name = "Boilerplate Plugin"
-version = "1.0.0"
-author = "Millennium"
-description = "A template plugin for Millennium."
+id = "it.meneghin.desktop-library"
+name = "Desktop Library"
+version = "0.1.0"
+author = "Simone Meneghin"
+description = "Turns the Steam library into a desktop."
 
 [assets]
 # reference resources to be included inside the plugin at compile time
@@ -48,7 +48,7 @@ entry = "webview/preload.ts"
 output_path = "auto"
 
 [dev]
-# plugin_name = "com.example.boilerplate"     # defaults to [plugin].id
+# plugin_name = "it.meneghin.desktop-library" # defaults to [plugin].id
 # socket = "/tmp/millennium-mep.sock"         # defaults to platform MEP path
 
 # Restart the plugin backend on any source change (default: true).
